@@ -2,6 +2,7 @@ from pyspark.sql import SparkSession, DataFrame
 from pyspark.sql.functions import *
 
 
+
 class CouncilsJob:
 
     def __init__(self):
