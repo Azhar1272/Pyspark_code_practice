@@ -1,7 +1,6 @@
 from utils import spark_utils
 f,t = spark_utils.pyspark_sql_lib()
 ## use of explode,collect_ws,,regexp_replace,split
-
 path_json = "data/json/epam.json"
 path_csv = "data/england_councils/district_councils.csv"
 
