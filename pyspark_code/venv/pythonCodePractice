@@ -1,0 +1,136 @@
+'''
+## anagram
+
+def anagram(input):
+    dic = {}
+    for word in input:
+        sorted_word = ''.join(sorted(word))
+        
+        if sorted_word in dic:
+            dic[sorted_word].append(word)
+        else:
+            dic[sorted_word] = [word]
+
+    return list(dic.values())
+
+input = ["eat", "tea", "dot", "car", "ate", "arc"]
+output = anagram(input)
+
+print(output)
+'''
+
+'''
+def create_dic(keys,values):
+    dic = {}
+    for i in range(len(keys)):
+        dic[keys[i]] = values[i]
+    return dic
+
+
+keys = ["name", "age", "city"]
+values = ["Alice", 25, "New York"]
+
+output = create_dic(keys,values)
+print(output)
+
+
+
+'''''''
+def countOfelement(lst):
+    distinct_list = set(lst)
+    dic = {}
+    for x in distinct_list:
+        dic.update({x:lst.count(x)})
+    return dic
+
+
+
+lst = ['a', 'c', 'b', 'b', 'c', 'c', 'd']
+output = countOfelement(lst)
+print(output)
+'''
+'''
+def countofelement(s):
+    lst = []
+    lst = s.split(' ')
+    distinct_list = set(lst)
+    dic = {}
+    for x in distinct_list:
+        dic.update({x:lst.count(x)})
+    return dic
+
+s = "hello world hello"
+output = countofelement(s)
+print(output)
+'''
+'''
+def output(input):
+    count = 1
+    out = ''
+    for i in range(len(input)-1):
+        if input[i] == input[i+1]:
+            count += 1
+        else:
+            out = out + input[i] + str(count) # a1b2c2d4e2
+            count  = 1
+    out = out + input[i+1]+ str(count)
+    return out
+
+
+input = "abbccddddeeaaf"
+output = output(input)
+print(output)
+'''
+
+# def output(s):
+#     out = ''
+#     dic = {}
+#     len_out = 0
+#     for x in s:
+#         if x not in out:
+#             out = out + x
+#         else:
+#             if len(out) > len_out:
+#                 len_out = len(out)
+#                 final_output = out
+#             out = x
+#     else:
+#         if len(out) > len_out:
+#                 len_out = len(out)
+#                 final_output = out
+                
+#     return final_output       
+
+
+# s = "abcefabcdefghkj"
+# out = output(s)
+# print(out)
+
+
+# def output(input):
+#     dic = {}
+#     cnt = 0
+#     lst = []
+#     for i in range(len(input)):
+#         lst.clear()
+#         lst =  input[i]
+#         for x in lst:
+#             if x in dic.keys():
+#                 print('if',x)
+#                 cnt = dic[x]
+#                 cnt += 1
+#                 dic.update({x:cnt})
+#             else:
+#                 dic.update({x:len(lst)-1})
+#                 print('else',dic)
+
+#     return dic
+
+
+
+# fl = [[1,2,3], [2,3], [4,3]]
+# out = output(fl)
+# print(out)
+
+
+
