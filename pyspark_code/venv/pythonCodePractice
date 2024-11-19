@@ -108,19 +108,17 @@ print(output)
 # print(out)
 
 
-def output(input):
+def output(fl):
     dic = {}
     cnt = 0
-    lst = []
-    for i in range(len(input)):
-        lst.clear()
-        lst =  input[i]
-        for x in lst:
-            if x in dic.keys():
-                dic[x] += len(lst)-1
+    for lst in fl:
+        for item in lst:
+            if item in dic.keys():
+                #cnt = dic[item] + len(lst)-1
+                #dic.update({item:cnt})
+                 dic[item] += len(lst)-1 
             else:
-                dic.update({x:len(lst)-1})
-
+                dic.update({item:len(lst)-1})
     return dic
 
 fl = [[1,2,3], [2,3,1,4], [4,3]]
