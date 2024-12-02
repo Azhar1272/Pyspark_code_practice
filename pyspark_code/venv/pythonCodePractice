@@ -124,5 +124,37 @@ def output(fl):
 fl = [[1,2,3], [2,3,1,4], [4,3]]
 print(output(fl))
 
+def primenumber(lst):
+    nonprime = []
+    prime = []
+    for number in lst:
+        print( "outer loop", number)
+        mid = int(number/2) + 1
+        for i in range(2,mid):
+            print( "inner loop", i, number)
+            if number % i == 0:
+                nonprime.append(number)
+                break
+        else:
+            prime.append(number)
+                
 
+    return ('non prime number: ', nonprime, 'prime number: ', prime)
+
+
+lst = [2,3,4,5,6,7,8,9,10,11]
+print(primenumber(lst))
+
+
+def reverse_string(s):
+    lst = s.split(' ')
+    out = ''
+    for x in lst[::-1]:
+        out += x + ' ' 
+
+    return out.strip()
+
+s = "My name is azhar"
+# out = "azhar is name My"   
+print(reverse_string(s))
 
