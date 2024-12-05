@@ -215,10 +215,13 @@ product_id = set(item["product_id"] for item in data)
 result = {}
 for id in product_id: # 111
     result[id] = {"total_sales":0, "total_price":0}
-    for item in data: # all 4 records
-        if item["product_id"]  == id:
-            total_sales += 1
-            total_price += item["usd_price"]
+    # for item in data: # all 4 records
+    #     if item["product_id"]  == id:
+    #         total_sales += 1
+    #         total_price += item["usd_price"]
+    
+    total_sales = sum( 1 for item in data if item["product_id"]  == id)
+    total_price = sum( item["usd_price"] for item in data if item["product_id"]  == id)
 
     result[id] = {"total_sales":total_sales, "total_price":total_price, "avg_sales": total_price/total_sales}
 
