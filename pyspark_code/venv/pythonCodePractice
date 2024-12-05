@@ -201,3 +201,24 @@ print("Validation Result:", is_valid)
 print("Message:", message)
 
 
+data = [
+    {"sale_id": 1, "product_id": 111, "store_id": 123, "usd_price": 5},
+    {"sale_id": 10, "product_id": 111, "store_id": 123, "usd_price": 10},
+    {"sale_id": 2, "product_id": 222, "store_id": 124, "usd_price": 15},
+    {"sale_id": 3, "product_id": 222, "store_id": 125, "usd_price": 20}
+]
+
+product_ids = set(item["product_id"] for item in data  )
+total = {}
+
+
+for id in product_ids:
+    if id not in total:
+        total[id] = {"number_of_total_sales":0, "total_price":0}
+    for item in data:
+        if item["product_id"] == id:
+            total[id]["number_of_total_sales"] += 1
+            total[id]["total_price"] += item["usd_price"]
+    total[id]["avg_price"] = total[id]["total_price"] / total[id]["number_of_total_sales"]
+print(total)
+
