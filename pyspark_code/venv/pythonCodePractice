@@ -243,3 +243,18 @@ df = pd.DataFrame(data)
 # Group by product_id and calculate both sum and average
 final_result = df.groupby('product_id')['usd_price'].agg(['sum', 'mean']).reset_index().rename(columns={'sum': 'total_sales', 'mean': 'average_sales'})
 print(final_result)
+
+def find_number(s,t):
+    out = []
+    final = []
+    for x in s:
+        if target - x in s and x not in out:
+            out.append(x)
+            out.append(target - x)
+            final.append([x, target - x])
+    return final
+
+source = [2,3,4,9,8,6,1]
+target = 5
+out = find_number(source, target)
+print(out)
