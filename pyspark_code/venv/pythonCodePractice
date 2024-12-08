@@ -238,3 +238,8 @@ print(output)
 
 #{333: {'total_sales': 1, 'total_price': 30, 'avg_sale': 30.0}, 222: {'total_sales': 3, 'total_price': 60, 'avg_sale': 20.0}, 111: {'total_sales': 2, 'total_price': 15, 'avg_sale': 7.5}}
 
+df = pd.DataFrame(data)
+
+# Group by product_id and calculate both sum and average
+final_result = df.groupby('product_id')['usd_price'].agg(['sum', 'mean']).reset_index().rename(columns={'sum': 'total_sales', 'mean': 'average_sales'})
+print(final_result)
