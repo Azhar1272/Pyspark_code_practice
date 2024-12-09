@@ -23,6 +23,13 @@ df_hash_count = df_hash.groupBy("explode_text").agg(f.count("*").alias("count_of
 df_hash_count.show(truncate=False)
 
 
+df_when_caluse = (df_final.withColumn('count_alp',
+                     when(col('count') == 1, lit('one'))
+                    .when(col('count') == 2, lit('two'))
+                    .otherwise(lit('more than two')))
+                )
+df_when_caluse.show()
+
 """
 Input
 +-----+----------------+---------------------------------------------------------------------+-------+
