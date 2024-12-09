@@ -27,12 +27,3 @@ df.write.format("csv") \
     .option("compression", "gzip") \
     .mode("overwrite") \
     .save("s3://your-bucket/csv-output/")
-
-
-# Write as CSV with header and custom delimiter
-df.write.format("csv") \
-    .option("header", "true") \
-    .option("delimiter", "|") \
-    .option("compression", "gzip") \
-    .mode("overwrite") \
-    .save("s3://your-bucket/csv-output/")
