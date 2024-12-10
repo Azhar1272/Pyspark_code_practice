@@ -6,5 +6,8 @@ columns = ["name", "age"]
 # Create a DataFrame
 df = spark.createDataFrame(data, columns)
 
+# Read the Delta table
+df = spark.read.format("delta").load(delta_table_path)
+
 # Write DataFrame as a Delta Lake table
 df.write.format("delta").save("s3://your-bucket/delta-table")
