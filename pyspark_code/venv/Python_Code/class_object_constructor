@@ -1,0 +1,18 @@
+# Define a class
+class Car:
+    # Constructor
+    def __init__(self, make, model):
+        self.make = make
+        self.model = model
+
+    # Method
+    def display_info(self):
+        print(f"Car Make: {self.make}, Model: {self.model}")
+
+# Create objects (instances)
+car1 = Car("Toyota", "Corolla")  # Constructor is called
+car2 = Car("Honda", "Civic")     # Constructor is called
+
+# Use objects
+car1.display_info()  # Output: Car Make: Toyota, Model: Corolla
+car2.display_info()  # Output: Car Make: Honda, Model: Civic
