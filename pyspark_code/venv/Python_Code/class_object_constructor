@@ -1,18 +1,22 @@
-# Define a class
-class Car:
-    # Constructor
-    def __init__(self, make, model):
-        self.make = make
-        self.model = model
+# creating class
+class car:
+    
+    # initialize constructor
+    def __init__(self, number):
+        self.double_number = number * 2
+        self.triple_number = number * 3
 
-    # Method
-    def display_info(self):
-        print(f"Car Make: {self.make}, Model: {self.model}")
+    # Method 1
+    def double_result(self):
+        print(f"convert to double {self.double_number}")
 
+    # Method 2
+    def triple_result(self):
+        print(f"convert to triple {self.triple_number}")
+
+    
 # Create objects (instances)
-car1 = Car("Toyota", "Corolla")  # Constructor is called
-car2 = Car("Honda", "Civic")     # Constructor is called
+o = car(5)
 
 # Use objects
-car1.display_info()  # Output: Car Make: Toyota, Model: Corolla
-car2.display_info()  # Output: Car Make: Honda, Model: Civic
+o.double_result()
