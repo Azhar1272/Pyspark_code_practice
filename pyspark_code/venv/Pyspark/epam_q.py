@@ -9,6 +9,17 @@ df.show(truncate=False)
 df = spark_utils.read_json(path_json)
 df.show(truncate=False)
 
+data = [
+    (53627,"Hyderabad, INDIA","epam_rocks epam_internal #EPAM HACKATON ROCKS #Love #EPAM #Hackathons","EPAM_BD"),
+    (53628,"Hyderabad, INDIA","#epam_rocks_again","EPAM_BD"),
+    (53629,"Hyderabad, INDIA","#Hyderabad","joe"),
+]
+
+column = ['id','place','text','user']
+
+df = spark.createDataFrame(data,column)
+df.show(truncate=False)
+
 df_split = df.withColumn("split_text",f.split("text"," ")).select("user","split_text")
 df_explode = df_split.select("user",f.explode("split_text").alias("explode_text"))
 df_hash = df_explode.filter(f.col("explode_text").like('#%'))
