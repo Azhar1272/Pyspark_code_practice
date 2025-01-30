@@ -1,26 +1,24 @@
+
+
+
 def merge_intervals(intervals):
-    # Sort intervals by the start time
-    intervals.sort()
     
-    # Initialize merged list with the first interval
-    merged = [intervals[0]]
-    print(merged)
-    print(intervals[1:])
-    for start, end in intervals[1:]:
-        print(start,end)
+    final  = [intervals[0]]
+    
+    
+    for item in intervals[1:]:
+        print(item, item[1],final[-1][-1])
         
-        # If there's overlap, merge intervals
-        if start <= merged[-1][1]:
-            merged[-1][1] = max(merged[-1][1], end)
-            print(merged)
+        if  item[0] > final[-1][-1]:
+            final.append(item )
         else:
-            # No overlap, add a new interval
-            merged.append([start, end])
-    
-    return merged
+            final [-1][-1] = item [1]
+    return final
+        
+        
+        
 
-# Example usage
-intervals = [[1, 3], [2, 5], [7, 9], [8, 10]]
-result = merge_intervals(intervals)
-# print("Merged intervals:", result)
 
+
+intervals = [[1, 4], [2, 5], [6, 7], [8, 10]]
+print(merge_intervals(intervals))
