@@ -13,4 +13,7 @@ def flatlist(a):
             flatlist(x)
     return final
 
-print("Flattened List:", flatlist(a))
+print("Flattened List:", flatlist(a))  
+
+#[1, 2, 4, 2, 4, 6]
+
