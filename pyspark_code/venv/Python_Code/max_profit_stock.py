@@ -17,5 +17,5 @@ def Profit(sp):
 SP1 = [7, 1, 5, 3, 6, 4]
 SP2 = [7, 5, 3, 6, 4, 1]
 
-print("Max Profit SP1:", Profit(SP1))
-print("Max Profit SP2:", Profit(SP2))
+print("Max Profit SP1:", Profit(SP1))  #5
+print("Max Profit SP2:", Profit(SP2)) #5
