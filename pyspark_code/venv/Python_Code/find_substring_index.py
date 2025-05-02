@@ -1,4 +1,4 @@
-""Solution (without using built-in functions):"""
+""Solution (without using built-in functions):""
 
 def find_substring(s: str, sub: str) -> int:
     # If both string and substring are empty, return 0
