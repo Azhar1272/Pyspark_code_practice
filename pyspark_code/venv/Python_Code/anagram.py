@@ -26,3 +26,28 @@ output = anagram(input_words)
 print(output)  #[['ate', 'eat', 'tea'], ['nat', 'tan'], ['bat']]
 
 
+''' another way :
+
+def anagram(input):
+    d = {}
+    result = []
+    
+    for word in input:
+        
+        sorted_word = "".join( sorted(word))
+        
+        if not sorted_word in d:
+            d[sorted_word] =[]
+        
+        d[sorted_word].append(word)
+    
+    return list(d.values())
+
+# Example usage
+input_words = ["eat", "tea", "tan", "ate", "nat", "bat"]
+output = anagram(input_words)
+print(output)  #[['ate', 'eat', 'tea'], ['nat', 'tan'], ['bat']]
+
+'''
+
+
