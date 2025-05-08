@@ -6,7 +6,7 @@ def countofelement(s):
     distinct_list = set(lst)
     dic = {}
     for x in distinct_list:
-        dic.update({x:lst.count(x)})
+        dic.update({x:lst.count(x)}) # dic[word] = dic.get(word,0)+lst.count(word)
     return dic
 
 s = "hello world hello"
