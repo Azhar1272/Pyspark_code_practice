@@ -4,7 +4,7 @@ def reverse_string(s):
     for x in lst[::-1]:
         out += x + ' ' 
 
-    return out.strip()
+    return out.strip() # or  return " ".join(lst[::-1])
 
 s = "My name is azhar"
 # out = "azhar is name My"   
