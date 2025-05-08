@@ -21,3 +21,34 @@ def output(s):
 s = "abcefabcdefghkj"
 out = output(s)
 print(out) #abcdefghkj
+
+
+'''Another way :
+
+def output(s):
+     
+     out =''
+     final =''
+     max = 0
+     for x in s:
+         
+         if x not in out:
+             out += x
+         else:
+             if max < len(out):
+                 max = len(out)
+                 final  = out+x
+                 
+             
+             out = x
+                 
+                 
+     return out
+            
+             
+            
+
+
+s = "abcefabcdefghkj"
+out = output(s)
+print(out) #abcdefghkj'''
