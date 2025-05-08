@@ -14,3 +14,9 @@ test_strings = [
     "world",
     "A man, a plan, a canal - Panama"
 ]
+
+
+
+for string in test_strings:
+    result = is_palindrome(string)
+    print(f"'{string}' is a palindrome: {result}")
