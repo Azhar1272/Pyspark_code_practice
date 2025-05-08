@@ -20,3 +20,27 @@ o = car(5)
 
 # Use objects
 o.double_result()
+
+
+'''Example 2'''
+class Field:
+    def __init__(self):
+        self.__value = None
+
+    def get_value(self):
+        """
+        Returns the current value of the field.
+        """
+        return self.__value
+
+    def set_value(self, new_value):
+        """
+        Sets a new value to the field.
+        """
+        self.__value = new_value
+
+
+f = Field()
+f.set_value(42)
+print(f.get_value())  # Output: 42
+
