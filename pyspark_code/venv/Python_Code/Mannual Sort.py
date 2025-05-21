@@ -17,3 +17,21 @@ def manual_sort(nums):
 # Example
 nums = [1, 3, 2, 2, 3, 1]
 print(manual_sort(nums))  # Output: [1, 1, 2, 2, 3, 3]
+
+
+##Another Way
+
+from collections import Counter
+
+def sort_by_frequency(nums):
+    freq = Counter(nums)
+    result = []
+    for val in range(min(nums), max(nums)+1):
+        result.extend([val] * freq[val])
+    return result
+
+# Example
+nums = [1, 3, 2, 2, 3, 1]
+print(sort_by_frequency(nums))  # Output: [1, 1, 2, 2, 3, 3]
+
+
